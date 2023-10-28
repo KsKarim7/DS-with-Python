@@ -2,12 +2,13 @@
 
 class Patient:
     def __init__(self, id, name, age, bgrp, n, p):
-        count = 0
-        if (count == 0):
-            self.id = 1
-            count += 1
-        else:
-            self.id = id+1
+        # count = 0
+        # if (count == 0):
+        #     self.id = 1
+        #     count += 1
+        # else:
+        #     self.id = id+1
+        self.id = id
         self.name = name
         self.age = age
         self.bgrp = bgrp
@@ -52,4 +53,11 @@ class WRM:
                 f'Patient {temp.id}: Name: {temp.name}  Age: {temp.age} Blood Group: {temp.bgrp}')
 
     def reverseTheLine(self):
-        pass
+        temp = self.dp.next
+        tempp = self.tail
+        while (temp != tempp):
+            n = temp.elem
+            temp.elem = tempp.elem
+            tempp.elem = n
+            temp = temp.next
+            tempp = tempp.prev
